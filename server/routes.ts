@@ -2,8 +2,10 @@ import * as express from 'express';
 
 import CatCtrl from './controllers/cat';
 import UserCtrl from './controllers/user';
+import FilmCtrl from './controllers/film';
 import Cat from './models/cat';
 import User from './models/user';
+import Film from './models/film';
 
 export default function setRoutes(app) {
 
@@ -11,6 +13,7 @@ export default function setRoutes(app) {
 
   const catCtrl = new CatCtrl();
   const userCtrl = new UserCtrl();
+  const filmCtrl = new FilmCtrl();
 
   // Cats
   router.route('/cats').get(catCtrl.getAll);
@@ -28,6 +31,12 @@ export default function setRoutes(app) {
   router.route('/user/:id').get(userCtrl.get);
   router.route('/user/:id').put(userCtrl.update);
   router.route('/user/:id').delete(userCtrl.delete);
+  // notre route
+  router.route('/films').get(filmCtrl.getAll);
+  router.route('/films/count').get(filmCtrl.count);
+  router.route('/film/:id').get(filmCtrl.getbyurltorrent);
+  router.route('/filmssr/:id').get(filmCtrl.getbyplusnom);
+
 
   // Apply the routes to our application with the prefix /api
   app.use('/api', router);

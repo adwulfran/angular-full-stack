@@ -41,6 +41,30 @@ abstract class BaseCtrl {
     });
   }
 
+  // Get by nom
+  getbynom = (req, res) => {
+    this.model.findOne({ nom : req.params.id }, (err, item) => {
+      if (err) { return console.error(err); }
+      res.status(200).json(item);
+    });
+  }
+
+  // Get by nom
+  getbyurltorrent = (req, res) => {
+    this.model.findOne({ urltorrent : req.params.id }, (err, item) => {
+      if (err) { return console.error(err); }
+      res.status(200).json(item);
+    });
+  }
+
+// Get by plusieurs noms
+  getbyplusnom = (req, res) => {
+
+    this.model.find({ nom : new RegExp(req.params.id, "i") }).limit(10).exec(function(err, item)  {
+      if (err) { return console.error(err); }
+      res.status(200).json(item);
+    });
+  }
   // Update by id
   update = (req, res) => {
     this.model.findOneAndUpdate({ _id: req.params.id }, req.body, (err) => {

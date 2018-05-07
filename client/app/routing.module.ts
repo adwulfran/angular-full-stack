@@ -9,6 +9,11 @@ import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FilmsComponent } from './films/films.component';
+import { FilmDetailComponent }  from './film-detail/film-detail.component';
+
+import { NgbdCarouselBasic } from './carousel-basic/carousel-basic.component';
+
 
 import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
@@ -22,6 +27,11 @@ const routes: Routes = [
   { path: 'account', component: AccountComponent, canActivate: [AuthGuardLogin] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuardAdmin] },
   { path: 'notfound', component: NotFoundComponent },
+  //notre nouvelle route
+  { path: 'films', component: FilmsComponent },
+  { path: 'filmdetail/:ligne', component: FilmDetailComponent },
+  { path: 'carousel', component: NgbdCarouselBasic },
+  
   { path: '**', redirectTo: '/notfound' },
 ];
 

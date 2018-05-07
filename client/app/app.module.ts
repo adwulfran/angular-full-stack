@@ -17,6 +17,15 @@ import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FilmsComponent } from './films/films.component';
+import { FilmService } from './services/film.service';
+import { FilmSearchComponent } from './film-search/film-search.component';
+import { FilmDetailComponent } from './film-detail/film-detail.component';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbdCarouselBasic } from './carousel-basic/carousel-basic.component';
+
+
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -32,7 +41,11 @@ export function tokenGetter() {
     LogoutComponent,
     AccountComponent,
     AdminComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FilmsComponent,
+    FilmSearchComponent,
+    FilmDetailComponent,
+    NgbdCarouselBasic
   ],
   imports: [
     RoutingModule,
@@ -42,14 +55,16 @@ export function tokenGetter() {
         tokenGetter: tokenGetter,
         // whitelistedDomains: ['localhost:3000', 'localhost:4200']
       }
-    })
+    }),
+    NgbModule.forRoot()
   ],
   providers: [
     AuthService,
     AuthGuardLogin,
     AuthGuardAdmin,
     CatService,
-    UserService
+    UserService,
+    FilmService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

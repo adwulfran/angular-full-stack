@@ -17,6 +17,11 @@
           </a>
         </li>
         <li class="nav-item">
+          <a routerLink="/films" class="nav-link" routerLinkActive="active">
+            <i class="fa fa-list"></i> Films
+          </a>
+        </li>
+        <li class="nav-item">
           <a routerLink="/login" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
             <i class="fa fa-sign-in"></i> Login
           </a>
@@ -40,6 +45,9 @@
           <a routerLink="/logout" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
             <i class="fa fa-sign-out"></i> Logout
           </a>
+        </li>
+        <li class="nav-item">
+          <app-film-search></app-film-search>
         </li>
       </ul>
     </div>

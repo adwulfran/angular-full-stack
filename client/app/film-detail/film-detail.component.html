@@ -1,0 +1,11 @@
+<div *ngIf="film">
+
+  <h2>{{ film.nom | uppercase }} Details</h2>
+  <img src="http://obeflix.com/clients/img/{{film.urltorrent}}" style="height:200px;width:200px">
+  <div><span>id: </span>{{film.id}}</div>
+  <div>
+  	
+    <span>id: </span>{{film.urltorrent}}
+  </div>
+<button (click)="goBack()">go back</button>
+</div>

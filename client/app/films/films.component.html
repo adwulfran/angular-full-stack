@@ -1,0 +1,16 @@
+
+
+<div class="grid grid-pad">
+	<a *ngFor="let film of films" class="col-1-4"
+	routerLink="/filmdetail/{{film.urltorrent}}">
+	<div class="module film">
+		
+		<img src="http://obeflix.com/clients/img/{{film.urltorrent}}" style="height:200px;width:200px">
+		<div class="content">
+			<h4>{{film.nom}}</h4>
+
+		</div>
+	
+</div>
+</a>
+</div>
