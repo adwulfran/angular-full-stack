@@ -29,7 +29,7 @@ export class FilmService {
    /** GET hero by id. Will 404 if id not found */
 
 
-   getFilm(ligne : number): Observable<Film> {
+   getFilm(ligne : string): Observable<Film> {
     return this.http.get<Film>(`/api/film/${ligne}`);
   }
 
