@@ -1,3 +1,5 @@
+
+
 <div *ngIf="film">
 
   <h2>{{ film.nom | uppercase }} Details</h2>
@@ -7,5 +9,16 @@
   	
     <span>id: </span>{{film.urltorrent}}
   </div>
+
 <button (click)="goBack()">go back</button>
+
+
+</div>
+<div>
+	<form #accountForm="ngForm" (ngSubmit)="save(user)">
+	<input class="form-control" type="text" name="items" [(ngModel)]="user.items" placeholder="Items" required>
+	<button class="btn btn-primary" type="submit" [disabled]="!accountForm.form.valid">
+        <i class="fa fa-save"></i> Save
+      </button>
+</form>
 </div>
