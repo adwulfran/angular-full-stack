@@ -73,6 +73,14 @@ abstract class BaseCtrl {
     });
   }
 
+   // updatecart by id
+  updatecart = (req, res) => {
+    this.model.findOneAndUpdate({ _id: req.params.id }, { items : req.params.item}, (err) => {
+      if (err) { return console.error(err); }
+      res.sendStatus(200);
+    });
+  }
+
   // Delete by id
   delete = (req, res) => {
     this.model.findOneAndRemove({ _id: req.params.id }, (err) => {
