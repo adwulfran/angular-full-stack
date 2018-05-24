@@ -6,7 +6,7 @@
   <img src="http://obeflix.com/clients/img/{{film.urltorrent}}" style="height:200px;width:200px">
   <div><span>id: </span>{{film.id}}</div>
   <div>
-  	
+    
     <span>id: </span>{{film.urltorrent}}
   </div>
 
@@ -14,11 +14,19 @@
 
 
 </div>
+<button (click)="save(user)">Add</button>
 <div>
-	<form #accountForm="ngForm" (ngSubmit)="save(user)">
-	<input class="form-control" type="text" name="items" [(ngModel)]="user.items" placeholder="Items" required>
-	<button class="btn btn-primary" type="submit" [disabled]="!accountForm.form.valid">
+  <form #accountForm="ngForm" (ngSubmit)="save(user)">
+  <input class="form-control" type="text" name="items" [(ngModel)]="user.items"  placeholder="Items" required >
+
+  <button class="btn btn-primary" type="submit" [disabled]="!accountForm.form.valid">
         <i class="fa fa-save"></i> Save
       </button>
 </form>
 </div>
+
+{{user.email}}
+
+<a href="/api/usercart/{{user._id}}/{{film.nom}}">
+   <button>ADD TO CART</button>
+</a>
