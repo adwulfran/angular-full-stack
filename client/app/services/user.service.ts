@@ -37,6 +37,11 @@ export class UserService {
     return this.http.put(`/api/user/${user._id}`, user, { responseType: 'text' });
   }
 
+// updatecart doit aussi prendre item, comment lui transmettre ?
+updatecart(user: User): Observable<string> {
+   return this.http.get<string>(`/api/usercart/${user._id}`);
+  }
+
   deleteUser(user: User): Observable<string> {
     return this.http.delete(`/api/user/${user._id}`, { responseType: 'text' });
   }
