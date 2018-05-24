@@ -30,6 +30,7 @@ export default function setRoutes(app) {
   router.route('/user').post(userCtrl.insert);
   router.route('/user/:id').get(userCtrl.get);
   router.route('/user/:id').put(userCtrl.update);
+  router.route('/usercart/:id/:item').get(userCtrl.updatecart);
   router.route('/user/:id').delete(userCtrl.delete);
   // notre route
   router.route('/films').get(filmCtrl.getAll);
