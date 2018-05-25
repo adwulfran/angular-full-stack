@@ -60,15 +60,15 @@ save(user: User) {
 }
 
 
-/* il faut transmettre l'item à userService pour que updatecart fonctionne
-updatecart(user: User) {
-    this.userService.updatecart(user).subscribe(
+// il faut transmettre l'item à userService pour que updatecart fonctionne
+updatecart(user: User, film : Film) {
+    this.userService.updatecart(user, film).subscribe(
       res => this.toast.setMessage('account settings saved!', 'success'),
       error => console.log(error)
     );
 }
 
-*/
+
 
 
  goBack(): void {
