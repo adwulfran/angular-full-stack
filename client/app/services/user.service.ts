@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import { User } from '../shared/models/user.model';
+import { Film } from '../shared/models/film.model';
 
 @Injectable()
 export class UserService {
@@ -38,8 +39,8 @@ export class UserService {
   }
 
 // updatecart doit aussi prendre item, comment lui transmettre ?
-updatecart(user: User): Observable<string> {
-   return this.http.get<string>(`/api/usercart/${user._id}`);
+updatecart(user: User, film: Film): Observable<string> {
+   return this.http.get<string>(`/api/usercart/${user._id}/${film.nom}`);
   }
 
   deleteUser(user: User): Observable<string> {
