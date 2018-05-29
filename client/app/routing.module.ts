@@ -11,7 +11,7 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FilmsComponent } from './films/films.component';
 import { FilmDetailComponent }  from './film-detail/film-detail.component';
-
+import { CartComponent } from './cart/cart.component';
 import { NgbdCarouselBasic } from './carousel-basic/carousel-basic.component';
 
 
@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'films', component: FilmsComponent },
   { path: 'filmdetail/:ligne', component: FilmDetailComponent },
   { path: 'carousel', component: NgbdCarouselBasic },
+  { path: 'cart', component: CartComponent },
   
   { path: '**', redirectTo: '/notfound' },
 ];
