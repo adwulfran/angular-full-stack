@@ -21,9 +21,11 @@ import { FilmsComponent } from './films/films.component';
 import { FilmService } from './services/film.service';
 import { FilmSearchComponent } from './film-search/film-search.component';
 import { FilmDetailComponent } from './film-detail/film-detail.component';
+import { CartComponent } from './cart/cart.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbdCarouselBasic } from './carousel-basic/carousel-basic.component';
+
 
 
 
@@ -45,7 +47,8 @@ export function tokenGetter() {
     FilmsComponent,
     FilmSearchComponent,
     FilmDetailComponent,
-    NgbdCarouselBasic
+    NgbdCarouselBasic,
+    CartComponent
   ],
   imports: [
     RoutingModule,
