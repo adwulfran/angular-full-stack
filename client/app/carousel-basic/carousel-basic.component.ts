@@ -20,14 +20,14 @@ export class NgbdCarouselBasic implements OnInit {
  ngOnInit() {
     this.filmService.getFilms() // comme api sur local url il préférable d'utiliser FilmService :
    // this.filmService.getFilms()  au lieu de  this._http.get('/api/films')    
-        .pipe(map((images: Array<{_id: string}>) => this._randomImageUrls(images)))
+        .pipe(map((images: Array<{urltorrent: string}>) => this._randomImageUrls(images)))
         .subscribe(images => this.images = images);
   }
 
-  private _randomImageUrls(images: Array<{_id : string}>): Array<string> {
+  private _randomImageUrls(images: Array<{urltorrent : string}>): Array<string> {
     return [1, 2, 3].map(() => {
-      const randomId = images[Math.floor(Math.random() * 3)]._id;
-      return `http://obeflix.com/img/${randomId}`;
+      const randomId = images[Math.floor(Math.random() * 3)].urltorrent;
+      return `http://obeflix.com/clients/img/${randomId}`;
     });
   }
 }
