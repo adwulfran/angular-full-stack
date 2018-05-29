@@ -15,7 +15,7 @@ import { ToastComponent } from '../shared/toast/toast.component';
   styleUrls: ['./film-detail.component.css']
 })
 export class FilmDetailComponent implements OnInit {
-  @Input() user: User;
+  user = new User();
   film = new Film();
   films: Film[] = [];
   isLoading = true;
