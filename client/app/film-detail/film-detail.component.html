@@ -7,29 +7,23 @@
   <div><span>id: </span>{{film.id}}</div>
   <div>
     
-    <span>id: </span>{{film.urltorrent}}
+    <span>urltorrent </span>{{film.urltorrent}}
   </div>
 
 <button (click)="goBack()">go back</button>
 
 
-</div>
-<button (click)="save(user)">Add</button>
-<div>
-  <form #accountForm="ngForm" (ngSubmit)="save(user)">
-  <input class="form-control" type="text" name="items" [(ngModel)]="user.items"  placeholder="Items" required >
 
-  <button class="btn btn-primary" type="submit" [disabled]="!accountForm.form.valid">
-        <i class="fa fa-save"></i> Save
-      </button>
-</form>
-</div>
 
-{{user.email}}
 
-<a href="/api/usercart/{{user._id}}/{{film.nom}}">
-   <button>ADD TO CART</button>
-</a>
+
+
+<div *ngIf="user">
+
 
 
 <button (click)="updatecart(user, film)">Add</button>
+
+</div>
+
+</div>
