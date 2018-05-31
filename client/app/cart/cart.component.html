@@ -1,11 +1,18 @@
 <p>
-	<table>
+	<table #filter>
 		<tr>
 			<td>{{user.items[0].nom}}</td>
-			<td> {{user.items[0].urltorrent}}</td>
+			<td> {{user.items[0].price}}</td>
 		</tr>
 		<tr>
 			<td> {{user.items[1].nom}}</td>	
-			<td> {{user.items[1].urltorrent}}</td>
+			<td> {{user.items[1].price}}</td>
+		</tr>
+		<tr>
+			<td> TOTAL </td>	
+			<td> {{user.totalcart}}</td>
 		</tr>
 	</table>
+	<button (click)="deletecart(user);filter.hidden = !filter.hidden">DELETE CART</button>
+
+	
