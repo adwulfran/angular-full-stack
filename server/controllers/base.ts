@@ -77,9 +77,45 @@ abstract class BaseCtrl {
     
   updatecart = (req, res) => {
     this.model.findOneAndUpdate({ _id: req.params.id }, 
-    	{ $addToSet : { items : { nom : req.params.item, urltorrent : req.params.itemprice }}}, (err) => {
+    	{ $addToSet : { items : { nom : req.params.item, urltorrent : req.params.urltorrent, price : req.params.itemprice }}}, (err) => {
       		if (err) { return console.error(err); }
      		 res.sendStatus(200);
+    });
+   
+  }
+
+  deletecart = (req, res) => {
+    this.model.findOneAndUpdate({ _id: req.params.id }, 
+      { $set : { items : [], totalcart : 0 }}, (err) => {
+          if (err) { return console.error(err); }
+         res.sendStatus(200);
+    });
+  }
+
+  totalcart = (req, res) => {
+    this.model.findOne({ _id: req.params.id }, function(err, c) {
+      if (err) { return console.error(err); }
+      if (!c) { console.log("aucun client"); return;}
+      function getSum(total, num) {
+        return total + num;
+      }
+      var someArray = c.items ;
+      someArray.forEach((item, index) => {
+        someArray[index] = Number(c.items[index].price);
+        // console.log(item); // 9, 2, 5 // console.log(index); // 0, 1, 2
+      });
+                                
+      console.log('le tableau someArray :' +someArray);
+      if (someArray.length > 0) {
+        const total = someArray.reduce(getSum); console.log("LE TOTAL VAUT :" +total);
+        c.totalcart = total;
+        //c.totalcart = c.items[0].nom+c.items[1].nom; console.log(c.items.length);
+        c.save((err, user) => {
+          console.log(user + " modifié!");
+        })
+      }
+      else  { const total = 0; }
+      res.sendStatus(200);
     });
    
   }
