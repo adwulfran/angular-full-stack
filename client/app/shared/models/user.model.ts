@@ -3,5 +3,6 @@ export class User {
   username?: string;
   email?: string;
   role?: string;
-  items?: [{nom?: string; urltorrent?: string;}];
+  items?: [{nom?: string; urltorrent?: string; price?: number}];
+  totalcart?: number;
 }
