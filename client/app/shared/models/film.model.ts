@@ -5,4 +5,5 @@ export class Film {
   urltorrent?: string;
   openload?: string;
   ligne?: number;
+  price?: number;
 }
