@@ -5,7 +5,8 @@ const filmSchema = new mongoose.Schema({
   categorie: String,
   urltorrent :  String,
   openload : String,
-  ligne : Number
+  ligne : Number,
+  price : Number
 });
 
 const Film = mongoose.model('Film', filmSchema);
