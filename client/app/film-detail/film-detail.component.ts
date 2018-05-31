@@ -68,7 +68,12 @@ updatecart(user: User, film : Film) {
     );
 }
 
-
+totalcart(user: User) {
+    this.userService.totalcart(user).subscribe(
+      res => this.toast.setMessage('account settings saved!', 'success'),
+      error => console.log(error)
+    );
+}
 
 
  goBack(): void {
