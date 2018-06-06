@@ -3,6 +3,6 @@ export class User {
   username?: string;
   email?: string;
   role?: string;
-  items?: [{nom?: string; urltorrent?: string; price?: number}];
+  items?: [{nom?: string; urltorrent?: string; price?: number; qty?: number}];
   totalcart?: number;
 }
