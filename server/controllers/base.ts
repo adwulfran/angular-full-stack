@@ -77,7 +77,7 @@ abstract class BaseCtrl {
     
   updatecart = (req, res) => {
     this.model.findOneAndUpdate({ _id: req.params.id }, 
-    	{ $addToSet : { items : { nom : req.params.item, urltorrent : req.params.urltorrent, price : req.params.itemprice }}}, (err) => {
+    	{ $addToSet : { items : { nom : req.params.item, urltorrent : req.params.urltorrent, price : req.params.itemprice, qty : req.params.itemqty }}}, (err) => {
       		if (err) { return console.error(err); }
      		 res.sendStatus(200);
     });
