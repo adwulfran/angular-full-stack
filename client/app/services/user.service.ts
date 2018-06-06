@@ -39,8 +39,8 @@ export class UserService {
   }
 
 
-updatecart(user: User, film: Film): Observable<string> {
-   return this.http.get<string>(`/api/usercart/${user._id}/${film.nom}/${film.urltorrent}/${film.price}`);
+updatecart(user: User, film: Film, itemqty : Number): Observable<string> {
+   return this.http.get<string>(`/api/usercart/${user._id}/${film.nom}/${film.urltorrent}/${film.price}/${itemqty}`);
   }
 
 deletecart(user: User): Observable<string> {
