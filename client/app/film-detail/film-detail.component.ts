@@ -18,6 +18,7 @@ export class FilmDetailComponent implements OnInit {
   user = new User();
   film = new Film();
   films: Film[] = [];
+  itemqty = Number;
   isLoading = true;
   
   constructor(
@@ -61,8 +62,8 @@ save(user: User) {
 
 
 // il faut transmettre l'item à userService pour que updatecart fonctionne
-updatecart(user: User, film : Film) {
-    this.userService.updatecart(user, film).subscribe(
+updatecart(user: User, film : Film, itemqty : Number) {
+    this.userService.updatecart(user, film, itemqty).subscribe(
       res => this.toast.setMessage('account settings saved!', 'success'),
       error => console.log(error)
     );
