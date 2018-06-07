@@ -37,7 +37,7 @@ export class FilmDetailComponent implements OnInit {
 // paramMap.get('id');
 // params.urltorrent;
  getFilm() {
- 	const ligne = this.route.snapshot.params.ligne;
+   const ligne = this.route.snapshot.params.ligne;
  this.filmService.getFilm(ligne)
     .subscribe(film => this.film = film);
 
