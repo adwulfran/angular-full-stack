@@ -5,3 +5,9 @@ height : 150px;
 
 }
 
+.center {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+
