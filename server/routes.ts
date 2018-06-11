@@ -40,6 +40,7 @@ export default function setRoutes(app) {
   router.route('/films/count').get(filmCtrl.count);
   router.route('/film/:id').get(filmCtrl.getbyurltorrent);
   router.route('/filmssr/:id').get(filmCtrl.getbyplusnom);
+  router.route('/filterfilms/:id').get(filmCtrl.getbycategorie);
 
 
   // Apply the routes to our application with the prefix /api
