@@ -49,6 +49,14 @@ abstract class BaseCtrl {
     });
   }
 
+  // Get by categorie
+  getbycategorie = (req, res) => {
+    this.model.find({ categorie : req.params.id }, (err, item) => {
+      if (err) { return console.error(err); }
+      res.status(200).json(item);
+    });
+  }
+
   // Get by nom
   getbyurltorrent = (req, res) => {
     this.model.findOne({ urltorrent : req.params.id }, (err, item) => {
