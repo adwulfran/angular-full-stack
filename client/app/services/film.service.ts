@@ -39,10 +39,13 @@ export class FilmService {
       // if not search term, return empty film array.
       return of([]);
     }
-    return this.http.get<Film[]>(`/api/filmssr/${term}`)
-  
-      
+    return this.http.get<Film[]>(`/api/filmssr/${term}`) 
   }
+
+  getFilterFilms(filter: string): Observable<Film[]> {
+    return this.http.get<Film[]>(`/api/filterfilms/${filter}`);
+  }
+  
 
  
 
