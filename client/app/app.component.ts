@@ -11,10 +11,10 @@ import { User } from './shared/models/user.model';
 })
 export class AppComponent implements AfterViewChecked {
 
- 	user: User;
- 	 isLoading = true;	
+   user: User;
+    isLoading = true;  
   constructor(public auth: AuthService,
-  			  public userService : UserService,
+          public userService : UserService,
               private changeDetector: ChangeDetectorRef) { }
 
   // This fixes: https://github.com/DavideViolante/Angular-Full-Stack/issues/105
@@ -26,12 +26,12 @@ export class AppComponent implements AfterViewChecked {
    ngOnInit() {
     this.getUser();
 }
-  	// ajout de getUser...
-	 getUser() {
+    // ajout de getUser...
+   getUser() {
     this.userService.getUser(this.auth.currentUser).subscribe(
       data => this.user = data,
       error => console.log(error),
       () => this.isLoading = false
     );
-	}
+  }
 }
