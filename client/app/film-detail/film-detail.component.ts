@@ -9,6 +9,7 @@ import { FilmService } from '../services/film.service';
 
 import { UserService } from '../services/user.service';
 import { ToastComponent } from '../shared/toast/toast.component';
+import { DatacartService } from "../services/datacart.service";
 @Component({
   selector: 'app-film-detail',
   templateUrl: './film-detail.component.html',
@@ -19,7 +20,9 @@ export class FilmDetailComponent implements OnInit {
   film = new Film();
   films: Film[] = [];
   itemqty = Number;
+  message:number;
   isLoading = true;
+  timeout: number = 1
   
   constructor(
   private route: ActivatedRoute,
@@ -27,13 +30,22 @@ export class FilmDetailComponent implements OnInit {
   private filmService: FilmService,
   private  userService: UserService,
   private auth: AuthService,
+  private data: DatacartService,
   private location: Location
 ) {}
 
   ngOnInit(): void {
   this.getFilm();
   this.getUser();
+  this.data.currentMessage.subscribe(message => this.message = message);
 }
+
+newMessage() {
+    this.getUser();
+setTimeout(() => {
+      this.data.changeMessage(this.user.items.length);
+    }, 1000);    
+  }
 // paramMap.get('id');
 // params.urltorrent;
  getFilm() {
@@ -50,6 +62,7 @@ export class FilmDetailComponent implements OnInit {
       error => console.log(error),
       () => this.isLoading = false
     );
+
 }
 
 
