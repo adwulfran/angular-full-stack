@@ -25,6 +25,7 @@ import { CartComponent } from './cart/cart.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbdCarouselBasic } from './carousel-basic/carousel-basic.component';
+import { DatacartService } from './services/datacart.service';
 
 
 
@@ -67,7 +68,8 @@ export function tokenGetter() {
     AuthGuardAdmin,
     CatService,
     UserService,
-    FilmService
+    FilmService,
+    DatacartService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
