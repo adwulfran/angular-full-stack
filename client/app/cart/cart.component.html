@@ -1,5 +1,4 @@
-<p>
-	<table #filter>
+<table #filter>
 		<tr>
 			<td>{{user.items[0].nom}}</td>
 			<td> {{user.items[0].price}}</td>
@@ -12,8 +11,8 @@
 			<td> TOTAL </td>	
 			<td> {{user.totalcart}}</td>
 		</tr>
-	</table>
-	<button (click)="deletecart(user);filter.hidden = !filter.hidden">DELETE CART</button>
+</table>
+	<button (click)="deletecart(user);filter.hidden = !filter.hidden;getUser();">DELETE CART</button>
 
 	
 
