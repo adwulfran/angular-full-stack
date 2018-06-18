@@ -2,6 +2,8 @@
 
 <div *ngIf="film">
 
+
+<p> <i class="fa fa-shopping-cart"></i></p>
   <h2>{{ film.nom | uppercase }} Details</h2>
   <img src="http://obeflix.com/clients/img/{{film.urltorrent}}" style="height:200px;width:200px">
   <div><span>id: </span>{{film.id}}</div>
@@ -18,13 +20,12 @@
 
 
 
-<div *ngIf="user">
 
 
 
-<button (click)="updatecart(user, film, 4);totalcart(user);getUser()">Add</button>
+<button (click)="updatecart(user, film, 4);totalcart(user);getUser();newMessage()">Add</button>
 
 
-</div>
+
 
 </div>
