@@ -9,6 +9,7 @@
 
 .grid {
   margin: 0;
+  margin-left: 208px;
 }
 .col-1-4 {
   width: 25%;
@@ -37,6 +38,27 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
     color: #f1f1f1;
-    width: 200px;
+   /* width: 200px; */
     
+}
+
+/* config pour sidenav 
+*/
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    
+    /*left: 0;*/
+    background-color: #111;
+    overflow-x: hidden;
+    
+}
+
+.center {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
 }
