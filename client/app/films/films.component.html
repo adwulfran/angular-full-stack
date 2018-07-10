@@ -3,16 +3,18 @@
 
 
 <div>
-	<button (click)="ShowSerie();">Serie</button>
-	<button (click)="ShowFilm();">Film</button>
-	<button (click)="getFilms();">Show All</button>
+	<div class="sidenav">
+		<p class="center"> <button (click)="ShowSerie();">Serie</button></p> 
+		<p class="center"><button (click)="ShowFilm();">Film</button></p>
+		<p class="center"><button (click)="getFilms();">Show All</button></p>
+	</div>
 	<div *ngIf="showSelected">Result Found
 		<div class="grid grid-pad">
 			<a *ngFor="let film of films" class="col-1-4"
 			routerLink="/filmdetail/{{film.urltorrent}}">
 			<div class="module film">
 
-				<img src="http://obeflix.com/clients/img/{{film.urltorrent}}" style="height:200px;width:200px">
+				<img src="http://obeflix.com/clients/img/{{film.urltorrent}}" style="height:170px;width:170px">
 				<div class="content">
 					<h4>{{film.nom}}</h4>
 
