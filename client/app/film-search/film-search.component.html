@@ -5,7 +5,7 @@
 
   <ul class="search-result">
     <li *ngFor="let film of films$ | async" >
-      <a routerLink="/detail/{{film.id}}">
+      <a routerLink="/filmdetail/{{film.urltorrent}}">
         {{film.nom}}
       </a>
     </li>
