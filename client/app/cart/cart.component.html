@@ -1,18 +1,15 @@
-<table #filter>
-		<tr>
-			<td>{{user.items[0].nom}}</td>
-			<td> {{user.items[0].price}}</td>
-		</tr>
-		<tr>
-			<td> {{user.items[1].nom}}</td>	
-			<td> {{user.items[1].price}}</td>
-		</tr>
-		<tr>
-			<td> TOTAL </td>	
-			<td> {{user.totalcart}}</td>
-		</tr>
-</table>
-	<button (click)="deletecart(user);filter.hidden = !filter.hidden;getUser();">DELETE CART</button>
+<div>
+<ul #filter>
+		<li *ngFor="let useritem of useritems">
+			<span> {{useritem.nom}}</span>
+			<span> {{useritem.price}}</span>
+		</li>
+		
+</ul>
+</div>
+	<button (click)="newMessage();deletecart(user);filter.hidden = !filter.hidden;">DELETE CART</button>
+
+<span> {{user.totalcart}}</span>
 
 	
 
