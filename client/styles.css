@@ -1,10 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
+
+/* retrait pour avoir full page tab 
   margin-top: 15px;
   margin-bottom: 10px;
+  */	
+  /* ajout pour avoir full page tab */
+ 	margin: 0;
+ 	
+ 	width: 100%;
+
 }
 
 .input-group {
   margin-bottom: 15px;
 }
+/* ajout pour avoir full page tab */
+.container-fluid {
+  /* ajout pour avoir full page tab */
+ 	margin: 0;
+ 	
+ 	height: 100%;
+
+}
+
+
+
+
