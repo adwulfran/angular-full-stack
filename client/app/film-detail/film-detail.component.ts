@@ -20,7 +20,7 @@ export class FilmDetailComponent implements OnInit {
   film = new Film();
   films: Film[] = [];
   itemqty = Number;
-  message:number;
+  message:any;
   isLoading = true;
   timeout: number = 1
   
@@ -34,7 +34,7 @@ export class FilmDetailComponent implements OnInit {
   private location: Location
 ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
   this.getFilm();
   this.getUser();
   this.data.currentMessage.subscribe(message => this.message = message);
